@@ -65,11 +65,110 @@ This project uses the Boost Software License 1.0`;
   }
 }
 
-// TODO: Create a function to generate markdown for README
-function generateMarkdown(data) {
-  return `# ${data.title}
+// 
+function generateMarkdown({
+  title,
+  description,
+  install,
+  usage,
+  contribution,
+  tests,
+  license,
+}) {
+  //formating MD if information is blank
 
-`;
+
+  if (!description) {
+    description = ''
+  }else{
+  description = `## Description 
+  
+  ${description}`
+  usedHeaders.push('description')
+  }
+
+  if (!install) {
+    install = ''
+  }else{
+  install = `## Installation 
+  
+  ${install}`
+  usedHeaders.push('installation')
+  }
+
+  if (!usage) {
+    usage = ''
+  }else{
+  usage = `## Usage 
+  
+  ${usage}`
+  usedHeaders.push('usage')
+
+  }
+
+  if (!contribution) {
+    contribution = ''
+  }else{
+  contribution = `## Contributing
+  
+  ${contribution}`
+  usedHeaders.push('contributing')
+
+  }
+
+  if (!tests) {
+    tests = ''
+  }else{
+  tests = `## Tests 
+  
+  ${tests}`
+  usedHeaders.push('tests')
+
+  }
+
+  if (license !== 'None'){
+    usedHeaders.push('license')
+  }
+
+  const tableOfContents = () =>{
+    if (usedHeaders.length >= 3){
+      let ret = `## Table of Contents`
+  
+      usedHeaders.forEach((h,i)=>{
+        let fixed = h.replace(h.charAt(0), h.charAt(0).toUpperCase())
+        ret += `\n${i + 1}. [${fixed}](#${h})`
+      })
+      usedHeaders = []
+      return ret
+    }else{
+      usedHeaders = []
+      return ''
+    }
+    
+  }
+
+
+
+  return `# ${title} ${renderLicenseBadge(license)}
+
+${description}
+
+${tableOfContents()}
+
+${install}
+
+${usage}
+
+
+
+${contribution}
+
+${tests}
+
+${renderLicenseSection(license)}
+
+${renderLicenseLink(license)}
+`
 }
 
 module.exports = generateMarkdown;
