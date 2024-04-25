@@ -136,20 +136,23 @@ function generateMarkdown({
     contact = ''
   }else if (!email){
   contact = `## Contact Me 
-  
+  You can contact me through any of the below methods:
+
   Github: [${username}](github.com/${username})`
   usedHeaders.push('contact')
 
   }else if (!username){
     contact = `## Contact Me 
-  
+    You can contact me through any of the below methods:
+    
     Email: [${email}](mailto:${email})`
     usedHeaders.push('contact')
 
   }else{
     contact = `## Contact Me
+You can contact me through any of the below methods:
 
-Github: [${username}](github.com/${username})
+Github: [${username}](https://www.github.com/${username})
 
 Email: [${email}](mailto:${email})`
     usedHeaders.push('contact')
