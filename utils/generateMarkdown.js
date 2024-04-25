@@ -76,7 +76,7 @@ function generateMarkdown({
   license,
 }) {
   //formating MD if information is blank
-
+  
 
   if (!description) {
     description = ''
@@ -146,29 +146,25 @@ function generateMarkdown({
     }
     
   }
+  
+  const body = [description, tableOfContents(), install, usage, contribution, tests, renderLicenseSection(license), renderLicenseLink(license)]
+  .filter(thing => !!thing)
+  .map(thing => `\n${thing}`)
+  .join('\n')
 
-
-
+   
   return `# ${title} ${renderLicenseBadge(license)}
-
-${description}
-
-${tableOfContents()}
-
-${install}
-
-${usage}
-
-
-
-${contribution}
-
-${tests}
-
-${renderLicenseSection(license)}
-
-${renderLicenseLink(license)}
-`
+    ${body}
+  `
+// ${description}
+// ${tableOfContents()}
+// ${install}
+// ${usage}
+// ${contribution}
+// ${tests}
+// ${renderLicenseSection(license)}
+// ${renderLicenseLink(license)}
+// `
 }
 
 module.exports = generateMarkdown;
