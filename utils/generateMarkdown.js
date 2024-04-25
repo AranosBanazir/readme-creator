@@ -74,9 +74,11 @@ function generateMarkdown({
   contribution,
   tests,
   license,
+  username,
+  email,
 }) {
   //formating MD if information is blank
-  
+  let contact
 
   if (!description) {
     description = ''
@@ -130,6 +132,29 @@ function generateMarkdown({
     usedHeaders.push('license')
   }
 
+  if (!username && !email) {
+    contact = ''
+  }else if (!email){
+  contact = `## Contact Me 
+  
+  Github: [${username}](github.com/${username})`
+  usedHeaders.push('contact')
+
+  }else if (!username){
+    contact = `## Contact Me 
+  
+    Email: [${email}](mailto:${email})`
+    usedHeaders.push('contact')
+
+  }else{
+    contact = `## Contact Me
+
+Github: [${username}](github.com/${username})
+
+Email: [${email}](mailto:${email})`
+    usedHeaders.push('contact')
+  }
+
   const tableOfContents = () =>{
     if (usedHeaders.length >= 3){
       let ret = `## Table of Contents`
@@ -147,7 +172,7 @@ function generateMarkdown({
     
   }
   
-  const body = [description, tableOfContents(), install, usage, contribution, tests, renderLicenseSection(license), renderLicenseLink(license)]
+  const body = [description, tableOfContents(), install, usage, contribution, tests, contact, renderLicenseSection(license), renderLicenseLink(license)]
   .filter(thing => !!thing)
   .map(thing => `\n${thing}`)
   .join('\n')

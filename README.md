@@ -11,10 +11,11 @@
 4. [Contributing](#contributing)
 5. [Tests](#tests)
 6. [License](#license)
+7. [Contact](#contact)
 
 ## Installation 
   
-  asdf
+  adf
 
 ## Usage 
   
@@ -22,15 +23,20 @@
 
 ## Contributing
   
-  asdf
+  adf
 
 ## Tests 
   
-  asdf
+  asfd
+
+## Contact Me
+
+Github: [AranosBanazir](github.com/AranosBanazir)
+
+Email: [CalebSaiia@gmail.com](mailto:CalebSaiia@gmail.com)
 
 ## License 
 
 This project uses the The MIT License
 
 https://opensource.org/license/mit/
-  
