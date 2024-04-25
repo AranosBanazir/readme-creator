@@ -31,7 +31,7 @@
 
 ## Contact Me
 
-Github: [AranosBanazir](github.com/AranosBanazir)
+Github: [AranosBanazir](https://www.github.com/AranosBanazir)
 
 Email: [CalebSaiia@gmail.com](mailto:CalebSaiia@gmail.com)
 
