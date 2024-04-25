@@ -154,17 +154,7 @@ function generateMarkdown({
 
    
   return `# ${title} ${renderLicenseBadge(license)}
-    ${body}
-  `
-// ${description}
-// ${tableOfContents()}
-// ${install}
-// ${usage}
-// ${contribution}
-// ${tests}
-// ${renderLicenseSection(license)}
-// ${renderLicenseLink(license)}
-// `
+    ${body}`
 }
 
 module.exports = generateMarkdown;
