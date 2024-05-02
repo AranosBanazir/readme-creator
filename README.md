@@ -19,6 +19,8 @@
   
   To run the app make sure that your terminal is pathed to the same directory as the index.js file. When you are in the correct directory simply run the command 'node index.js' and you will be presented with a series of questions. Any questions that are not relevant to your project simply omit by hitting enter. When you have answered all the questions your README.md file will be generated with all of the information you provided.
 
+  Example Video: [Walkthrough Usage](https://drive.google.com/file/d/1SpReiIkpDegB91kxlsmrvL589uC1Gcup/view?usp=sharing)
+
 ## Contact
 
 You can contact me through any of the below methods:
